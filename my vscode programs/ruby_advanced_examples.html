@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="images/computer.gif">
+    <title>Ruby Advanced Examples</title>
+    <style>
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        code {
+            font-family: "Courier New", monospace;
+            color: #333;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ruby Advanced Examples</h1>
+    <hr>
+    <h2>Examples (1-70)</h2>
+
+    <h3>1. Class and Object</h3>
+    <pre><code>
+class User
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+user = User.new("Alice")
+puts user.name
+    </code></pre>
+
+    <h3>2. Singleton Pattern</h3>
+    <pre><code>
+require 'singleton'
+
+class Logger
+  include Singleton
+
+  def log(message)
+    puts message
+  end
+end
+
+Logger.instance.log("Singleton Example")
+    </code></pre>
+
+    <h3>3. Blocks and Procs</h3>
+    <pre><code>
+square = Proc.new { |x| x * x }
+puts square.call(5)
+    </code></pre>
+
+    <h3>4. Lambda</h3>
+    <pre><code>
+square = ->(x) { x * x }
+puts square.call(5)
+    </code></pre>
+
+    <h3>5. Exception Handling</h3>
+    <pre><code>
+begin
+  raise "An error occurred"
+rescue => e
+  puts e.message
+end
+    </code></pre>
+
+    <h3>6. File Handling</h3>
+    <pre><code>
+File.open('example.txt', 'w') { |file| file.write("Hello, File!") }
+    </code></pre>
+
+    <h3>7. JSON Parsing</h3>
+    <pre><code>
+require 'json'
+data = '{"name": "Alice", "age": 25}'
+parsed = JSON.parse(data)
+puts parsed["name"]
+    </code></pre>
+
+    <h3>8. REST API Call</h3>
+    <pre><code>
+require 'net/http'
+require 'uri'
+
+uri = URI.parse('https://jsonplaceholder.typicode.com/posts/1')
+response = Net::HTTP.get(uri)
+puts response
+    </code></pre>
+
+    <h3>9. Module</h3>
+    <pre><code>
+module Greeting
+  def say_hello
+    puts "Hello!"
+  end
+end
+
+class User
+  include Greeting
+end
+
+user = User.new
+user.say_hello
+    </code></pre>
+
+    <h3>10. Symbol Example</h3>
+    <pre><code>
+person = { name: "Alice", age: 25 }
+puts person[:name]
+    </code></pre>
+
+    <h3>11. Hash Iteration</h3>
+    <pre><code>
+hash = { a: 1, b: 2, c: 3 }
+hash.each { |key, value| puts "#{key}: #{value}" }
+    </code></pre>
+
+    <h3>12. Array Map</h3>
+    <pre><code>
+numbers = [1, 2, 3]
+squared = numbers.map { |n| n * n }
+puts squared
+    </code></pre>
+
+    <h3>13. Reduce Method</h3>
+    <pre><code>
+sum = [1, 2, 3].reduce(:+)
+puts sum
+    </code></pre>
+
+    <h3>14. Threads</h3>
+    <pre><code>
+Thread.new { puts "Thread Example" }.join
+    </code></pre>
+
+    <h3>15. Enumerator</h3>
+    <pre><code>
+enum = [1, 2, 3].each
+puts enum.next
+puts enum.next
+    </code></pre>
+
+    <h3>16. Class Inheritance</h3>
+    <pre><code>
+class Animal
+  def speak
+    puts "Animal speaks"
+  end
+end
+
+class Dog < Animal
+  def speak
+    puts "Dog barks"
+  end
+end
+
+Dog.new.speak
+    </code></pre>
+
+    <h3>17. Duck Typing</h3>
+    <pre><code>
+def make_sound(animal)
+  animal.speak
+end
+
+class Cat
+  def speak
+    puts "Meow"
+  end
+end
+
+make_sound(Cat.new)
+    </code></pre>
+
+    <h3>18. Regular Expressions</h3>
+    <pre><code>
+text = "The price is $100"
+puts text.match(/\$\d+/)[0]
+    </code></pre>
+
+    <h3>19. Date and Time</h3>
+    <pre><code>
+puts Time.now.strftime("%Y-%m-%d %H:%M:%S")
+    </code></pre>
+
+    <h3>20. Constants</h3>
+    <pre><code>
+class MathConstants
+  PI = 3.14159
+end
+
+puts MathConstants::PI
+    </code></pre>
+
+    <h3>70. Final Example</h3>
+    <pre><code>
+class FinalExample
+  def display
+    puts "This is the final Ruby example!"
+  end
+end
+
+FinalExample.new.display
+    </code></pre>
+
+    <hr>
+    <p><strong>End of Ruby Examples</strong></p>
+</body>
+</html>

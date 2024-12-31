@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="images/computer.gif">
+    <title>PHP Advanced Examples</title>
+    <style>
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>PHP Advanced Examples</h1>
+    <hr>
+    <h2>Examples (1-70)</h2>
+
+    <h3>1. Class and Object</h3>
+    <pre><code>
+    &lt;?php
+    class User {
+        public $name;
+        public function __construct($name) {
+            $this->name = $name;
+        }
+    }
+    $user = new User('Alice');
+    echo $user->name;
+    ?&gt;
+    </code></pre>
+
+    <h3>2. Singleton Pattern</h3>
+    <pre><code>
+    &lt;?php
+    class Singleton {
+        private static $instance;
+        private function __construct() {}
+        public static function getInstance() {
+            if (!self::$instance) self::$instance = new Singleton();
+            return self::$instance;
+        }
+    }
+    $singleton = Singleton::getInstance();
+    ?&gt;
+    </code></pre>
+
+    <h3>3. Dependency Injection</h3>
+    <pre><code>
+    &lt;?php
+    class Service {
+        public function serve() {
+            echo 'Service is running';
+        }
+    }
+    class App {
+        private $service;
+        public function __construct(Service $service) {
+            $this->service = $service;
+        }
+        public function run() {
+            $this->service->serve();
+        }
+    }
+    $app = new App(new Service());
+    $app->run();
+    ?&gt;
+    </code></pre>
+
+    <h3>4. REST API Response</h3>
+    <pre><code>
+    &lt;?php
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'success']);
+    ?&gt;
+    </code></pre>
+
+    <h3>70. Final Class</h3>
+    <pre><code>
+    &lt;?php
+    final class FinalClass {
+        public function display() {
+            echo "This is a final class.";
+        }
+    }
+    $final = new FinalClass();
+    $final->display();
+    ?&gt;
+    </code></pre>
+
+    <hr>
+    <p><strong>End of PHP Examples</strong></p>
+</body>
+</html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="images/computer.gif">
+    <title>Python Example's</title>
+</head>
+<body>
+    
+     <h1>Python Code Examples</h1>
+    <hr>
+    <br>
+    <h2>Beginner (1-30)</h2>
+    <br>
+    <h2>hello world!</h2>
+    <p>print("Hello world!")</p>
+    <br>
+    <h2>Variable Assignment</h2> 
+    <p>name = "John" <br>
+        age = 25 <br>
+        print(name, age)</p>
+    <br>
+    <h2>Data Types: Integer and Float</h2>
+    <p>a = 5 <br>
+        b = 2.5 <br>
+        print(a + b)</p>
+    <br>
+    <h2>String Concatenation</h2>
+    <p>first_name = "Jane" <br>
+        last_name = "Doe" <br>
+        print(first_name + " " + last_name)</p>
+    <br>
+    <h2>List</h2>
+    <p>fruits = ["apple", "banana", "cherry"] <br>
+        print(fruits[0])</p>
+    <br>
+    <h2>Loops: For Loop</h2>
+    <p>for i in range(5): <br>
+        print(i)</p>
+    <br>
+    <h2>Loops: While Loop</h2>
+    <p>i = 0 <br>
+        while i < 5: <br>
+        print(i) <br>
+        i += 1</p>
+    <br>
+    <h2>If-Else Statements</h2>
+    <p>x = 10 <br>
+        if x > 5: <br>
+        print("Greater than 5") <br>
+        else: <br>
+        print("Less than or equal to 5")</p>
+    <br>
+    <h2>User Input</h2>
+    <p>name = input("Enter your name: ") <br>
+        print(f"Hello, {name}!")</p>
+    <br>
+    <h2>List Append</h2>
+    <p>fruits = ["apple", "banana"] <br>
+        fruits.append("cherry") <br>
+        print(fruits)</p>
+    <br>
+    <h2>Simple Function</h2>
+    <p>def greet(name): <br>
+        return f"Hello, {name}!" <br><br>
+        print(greet("Alice"))</p>
+    <br>
+    <h2>Simple Calculator</h2>
+    <p>def add(a, b): <br>
+        return a + b <br><br>
+        print(add(3, 4))</p>
+    <br>
+    <h2>Basic Dictionary</h2>
+    <p>person = {"name": "John", "age": 30} <br>
+        print(person["name"])</p>
+    <br>
+    <h2>For Loop with Dictionary</h2>
+    <p>person = {"name": "John", "age": 30} <br>
+        for key, value in person.items(): <br>
+        print(key, value)</p>
+    <br>
+    <h2>Basic While Loop</h2>
+    <p>i = 1 <br>
+        while i <= 5: <br>
+        print(i) <br>
+        i += 1</p>
+    <br>
+    <h2>String Length</h2>
+    <p>word = "Hello" <br>
+        print(len(word))</p>
+    <br>
+    <h2>String Formatting</h2>
+    <p>name = "Alice" <br>
+        age = 25 <br>
+        print(f"Name: {name}, Age: {age}")</p>
+    <br>
+    <h2>List Slicing</h2>
+    <p>fruits = ["apple", "banana", "cherry"] <br>
+        print(fruits[1:3])</p>
+    <br>
+    <h2>Tuple</h2>
+    <p>person = ("John", 30) <br>
+        print(person[0])</p>
+    <br>
+    <h2>Set</h2>
+    <p>fruits = {"apple", "banana", "cherry"} <br>
+        print("banana" in fruits)</p>
+    <br>
+    <h2>Exception Handling</h2>
+    <p>try: <br>
+        x = 5 / 0 <br>
+        except ZeroDivisionError: <br>
+        print("Cannot divide by zero!")</p>
+    <br>
+    <h2>For Loop with Range</h2>
+    <p>for i in range(5, 10): <br>
+        print(i)</p>
+    <br>
+    <h2>List Comprehension</h2>
+    <p>numbers = [1, 2, 3, 4, 5] <br>
+        squares = [x ** 2 for x in numbers] <br>
+        print(squares)</p>
+    <br>
+    <h2>Check Even/Odd</h2>
+    <p>number = int(input("Enter a number: ")) <br>
+        if number % 2 == 0: <br>
+        print("Even") <br>
+        else: <br>
+        print("Odd")</p>
+    <br>
+    <h2>Factorial Function</h2>
+    <p>def factorial(n): <br>
+        if n == 0: <br>
+        return 1 <br>
+        else: <br>
+        return n * factorial(n-1) <br><br>
+        print(factorial(5))</p>
+    <br>
+    <h2>Max and Min from List</h2>
+    <p>numbers = [10, 20, 30, 40] <br>
+        print(max(numbers)) <br>
+        print(min(numbers))</p>
+    <br>
+    <h2>Reverse a String</h2>
+    <p>word = "Python" <br>
+        print(word[::-1])</p>
+    <br>
+    <h2>Simple Countdown Timer</h2>
+    <p>import time <br>
+        for i in range(10, 0, -1): <br>
+        print(i) <br>
+        time.sleep(1) <br>
+        print("Time's up!")</p>
+    <br>
+    <h2>Check Palindrome</h2>
+    <p>word = input("Enter a word: ") <br>
+        if word == word[::-1]: <br>
+        print("Palindrome") <br>
+        else: <br>
+        print("Not Palindrome")</p>
+    <br>
+    <h2>Sum of List Elements</h2>
+    <p>numbers = [1, 2, 3, 4, 5] <br>
+        print(sum(numbers))</p>
+    <br>
+    <h2>Intermediate (31-60)</h2>
+    <br>
+    <h2>Fibonacci Series</h2>
+    <p>def fibonacci(n): <br>
+        a, b = 0, 1 <br>
+        for _ in range(n): <br>
+        print(a, end=" ") <br>
+        a, b = b, a + b <br><br>
+        fibonacci(10)</p>
+    <br>
+    <h2>Prime Number Checker</h2>
+    <p>def is_prime(n): <br>
+        if n < 2: <br>
+        return False <br>
+        for i in range(2, n): <br>
+        if n % i == 0: <br>
+        return False <br>
+        return True <br><br>
+        print(is_prime(29))</p>
+    <br>
+    <h2>Nested Loops</h2>
+    <p>for i in range(3): <br>
+        for j in range(2): <br>
+        print(f"i: {i}, j: {j}")</p>
+    <br>
+    <h2>Find Maximum and Minimum in List</h2>
+    <p>numbers = [3, 5, 7, 2, 8] <br>
+        print(f"Max: {max(numbers)}") <br>
+        print(f"Min: {min(numbers)}")</p>
+    <br>
+    <h2>Flattening a Nested List</h2>
+    <p>nested_list = [[1, 2], [3, 4], [5, 6]] <br>
+        flattened = [item for sublist in nested_list for item in sublist] <br>
+        print(flattened)</p>
+    <br>
+    <h2>Palindrome Check</h2>
+    <p>def is_palindrome(s): <br>
+        return s == s[::-1] <br><br>
+        print(is_palindrome("racecar")) <br>
+        print(is_palindrome("hello"))</p>
+    <br>
+    <h2>Counting Occurrences in a List</h2>
+    <p>def count_occurrences(lst, value): <br>
+        return lst.count(value) <br><br>
+        numbers = [1, 2, 2, 3, 3, 3, 4] <br>
+        print(count_occurrences(numbers, 3))</p>
+    <br>
+    <h2>Remove Duplicates from List</h2>
+    <p>numbers = [1, 2, 2, 3, 3, 3, 4] <br>
+        unique = list(set(numbers)) <br>
+        print(unique)</p>
+    <br>
+    <h2>Check Anagram</h2>
+    <p>def is_anagram(s1, s2): <br>
+        return sorted(s1) == sorted(s2)</p>
+    <br>
+    <h2>Check Pangram</h2>
+    <p>import string <br>
+        def is_pangram(s): <br>
+        return set(string.ascii_lowercase) <= set(s.lower()) <br><br>
+        print(is_pangram("The quick brown fox jumps over the lazy dog")) <br>
+        print(is_pangram("Hello, world!"))</p>
+    <br>
+    <h2>Reverse Words in a String</h2>
+    <p>s = "Hello, world!" <br>
+        reversed = " ".join(reversed(s.split())) <br>
+        print(reversed)</p>
+    <br>
+    <h2>Check Leap Year</h2>
+    <p>def is_leap_year(year): <br>
+        if year % 4 == 0: <br>
+        if year % 100 == 0: <br>
+        if year % 400 == 0: <br>
+        return True <br>
+        else: <br>
+        return False <br>
+        else: <br>
+        return True <br>
+        else: <br>
+        return False</p>
+    <br>
+    <h2>Check Armstrong Number</h2>
+    <p>def is_armstrong(n): <br>
+        return n == sum(int(x) ** len(str(n)) for x in str(n))</p>
+    <br>
+    <h2>Sorting a List</h2>
+    <p>numbers = [5, 2, 9, 1, 5, 6] <br>
+        numbers.sort() <br>
+        print(numbers)</p>
+    <br>
+    <h2>Bubble Sort Algorithm</h2>
+    <p>def bubble_sort(arr): <br>
+        n = len(arr) <br>
+        for i in range(n): <br>
+        for j in range(0, n-i-1): <br>
+        if arr[j] > arr[j+1]: <br>
+        arr[j], arr[j+1] = arr[j+1], arr[j] <br><br>
+        return arr <br><br>
+        arr = [64, 25, 12, 22, 11] <br>
+        print(bubble_sort(arr))</p>
+        <br>
+        <h2>Dictionary Comprehension</h2>
+        <p>numbers = [1, 2, 3, 4] <br>
+            squares = {x: x**2 for x in numbers} <br>
+            print(squares)</p>
+        <br>
+        <h2>Nested Dictionary</h2>
+        <p>person = { <br>
+            "name": "John", <br>
+            "details": { <br>
+            "age": 30, <br>
+            "city": "New York" <br>
+            } <br>
+            } <br>
+            print(person["details"]["city"])</p>
+        <br>
+        <h2>Zip Function</h2>
+        <p>names = ["Alice", "Bob", "Charlie"] <br>
+            ages = [25, 30, 35] <br>
+            for name, age in zip(names, ages): <br>
+            print(f"{name} is {age} years old.") </p>
+        <br>
+        <h2>Enumerate Function</h2>
+        <p>fruits = ["apple", "banana", "cherry"] <br>
+            for index, fruit in enumerate(fruits): <br>
+            print(f"Index {index}: {fruit}")</p>
+        <br>
+        <h2>Reversed List</h2>
+        <p>numbers = [1, 2, 3, 4] <br>
+            reversed_numbers = list(reversed(numbers)) <br>
+            print(reversed_numbers)</p>
+        <br>
+        <h2>List Sorting in Reverse Order</h2>
+        <p>numbers = [5, 3, 8, 1] <br>
+            numbers.sort(reverse=True) <br>
+            print(numbers)</p>
+        <br>
+        <h2>Count Occurrences in a String</h2>
+        <p>sentence = "This is a test sentence." <br>
+            count = sentence.count("is") <br>
+            print(count)</p>
+        <br>
+        <h2>Find Index of an Element</h2>
+        <p>fruits = ["apple", "banana", "cherry"] <br>
+            index = fruits.index("banana") <br>
+            print(index)</p>
+        <br>
+        <h2>String Replace</h2>
+        <p>sentence = "Hello, world!" <br>
+            new_sentence = sentence.replace("world", "Python") <br>
+            print(new_sentence)</p>
+        <br>
+        <h2>Check Substring in String</h2>
+        <p>sentence = "Hello, world!" <br>
+            if "world" in sentence: <br>
+            print("Found!")</p>
+        <br>
+        <h2>Join Elements of a List into a String</h2>
+        <p>words = ["Hello", "world", "Python"] <br>
+            sentence = " ".join(words) <br>
+            print(sentence)</p>
+        <br>
+        <h2>Split String into List</h2>
+        <p>sentence = "Hello world Python" <br>
+            words = sentence.split() <br>
+            print(words)</p>
+        <br>
+        <h2>Remove Leading and Trailing Whitespace</h2>
+        <p>text = "  Hello, Python!  " <br>
+            print(text.strip())</p>
+        <br>
+        <h2>Find All Matches with Regular Expression</h2>
+        <p>import re <br>
+            text = "The rain in Spain stays mainly in the plain." <br>
+            matches = re.findall(r"\bin\b", text) <br>
+            print(matches)</p>
+        <br>
+        <h2>Check if a List Contains a Sublist</h2>
+        <p>main_list = [1, 2, 3, 4, 5] <br>
+            sublist = [2, 3] <br>
+            print(all(x in main_list for x in sublist))</p>
+        <br>
+        <h2>Flatten a List of Lists</h2>
+        <p>nested_list = [[1, 2], [3, 4], [5, 6]] <br>
+            flattened = [item for sublist in nested_list for item in sublist] <br>
+            print(flattened)</p>
+        <br>
+        <h2>Sorting a List of Tuples</h2>
+        <p>pairs = [(1, 3), (2, 2), (3, 1)] <br>
+            pairs.sort(key=lambda x: x[1]) <br>
+            print(pairs)</p>
+        <br>
+        <h2>Finding the Intersection of Two Lists</h2>
+        <p>list1 = [1, 2, 3, 4] <br>
+            list2 = [3, 4, 5, 6] <br>
+            intersection = list(set(list1) & set(list2)) <br>
+            print(intersection)</p>
+        <br>
+        <h2>Matrix Multiplication</h2>
+        <p>def matrix_multiply(A, B): <br>
+            result = [] <br>
+            for i in range(len(A)): <br>
+            row = [] <br>
+            for j in range(len(B[0])): <br>
+            cell = sum(A[i][k] * B[k][j] for k in range(len(B))) <br>
+            row.append(cell) <br>
+            result.append(row) <br>
+            return result <br><br>
+            A = [[1, 2], [3, 4]] <br>
+            B = [[5, 6], [7, 8]] <br>
+            print(matrix_multiply(A, B))</p>
+            <br>
+            <h2>Basic Web Scraping</h2>
+            <p>import requests <br>
+                from bs4 import BeautifulSoup <br>
+                url = "http://example.com" <br>
+                response = requests.get(url) <br>
+                soup = BeautifulSoup(response.text, 'html.parser') <br>
+                print(soup.title)</p>
+            <br>
+            <h2>Creating a Class</h2>
+            <p>class Person: <br>
+                def __init__(self, name, age): <br>
+                self.name = name <br>
+                self.age = age <br><br>
+                def greet(self): <br>
+                return f"Hello, my name is {self.name} and I am {self.age} years old." <br><br>
+                person = Person("Alice", 30) <br>
+                print(person.greet())</p>
+            <br>
+            <h2>Lambda Function</h2>
+            <p>multiply = lambda x, y: x * y <br>
+                print(multiply(3, 4))</p>
+            <br>
+            <h2>Map Function</h2>
+            <p>numbers = [1, 2, 3, 4] <br>
+                squared = list(map(lambda x: x ** 2, numbers)) <br>
+                print(squared)</p>
+            <br>
+            <h2>Filter Function</h2>
+            <p>numbers = [1, 2, 3, 4, 5] <br>
+                even_numbers = list(filter(lambda x: x % 2 == 0, numbers)) <br>
+                print(even_numbers)</p>
+            <br>
+            <h2>Reduce Function</h2>
+            <p>from functools import reduce <br>
+                numbers = [1, 2, 3, 4] <br>
+                product = reduce(lambda x, y: x * y, numbers) <br>
+                print(product)</p>
+            <br>
+            <h2>Reading a File</h2>
+            <p>with open('file.txt', 'r') as file: <br>
+                content = file.read() <br>
+                print(content)</p>
+            <br>
+            <h2>Writing to a File</h2>
+            <p>with open('file.txt', 'w') as file: <br>
+                file.write("Hello, world!") <br>
+                print("File written successfully.") </p>
+            <br>
+            <h2>Reading CSV File</h2>
+            <p>import csv <br>
+                with open('data.csv', 'r') as file: <br>
+                reader = csv.reader(file) <br>
+                for row in reader: <br>
+                print(row)</p>
+            <br>
+            <h2>Writing CSV File</h2>
+            <p>import csv <br>
+                data = [["name", "age"], ["Alice", 25], ["Bob", 30]] <br>
+                with open('output.csv', 'w', newline='') as file: <br>
+                writer = csv.writer(file) <br>
+                writer.writerows(data)</p>
+            <br>
+            <h2>JSON Parsing</h2>
+            <p>import json <br>
+                json_string = '{"name": "Alice", "age": 30}' <br>
+                data = json.loads(json_string) <br>
+                print(data["name"])</p>
+            <br>
+            <h2>Writing JSON to File</h2>
+            <p>import json <br>
+                data = {"name": "Alice", "age": 30} <br>
+                with open('data.json', 'w') as file: <br>
+                json.dump(data, file)</p>
+            <br>
+            <h2>Regular Expression Matching</h2>
+            <p>import re <br>
+                text = "The rain in Spain stays mainly in the plain." <br>
+                pattern = re.compile(r"\bin\b") <br>
+                matches = pattern.findall(text) <br>
+                print(matches)</p>
+            <br>
+            <h2>UUID Generation</h2>
+            <p>import uuid <br>
+                unique_id = uuid.uuid4() <br>
+                print(unique_id)</p>
+            <br>
+            <h2>Time Delay</h2>
+            <p>import time <br>
+                print("Start") <br>
+                time.sleep(2) <br>
+                print("End")</p>
+            <br>
+            <h2>Current Date and Time</h2>
+            <p>from datetime import datetime <br>
+                current_datetime = datetime.now() <br>
+                print(current_datetime)</p>
+            <br>
+            <h2>Convert String to Date</h2>
+            <p>from datetime import datetime <br>
+                date_string = "2024-12-31" <br>
+                date_object = datetime.strptime(date_string, '%Y-%m-%d') <br>
+                print(date_object)</p>
+            <br>
+            <h2>Convert Date to String</h2>
+            <p>from datetime import datetime <br>
+                date_object = datetime(2024, 12, 31) <br>
+                date_string = date_object.strftime('%Y-%m-%d') <br>
+                print(date_string)</p>
+            <br>
+            <h2>Generate Random Number</h2>
+            <p>import random <br>
+                random_number = random.randint(1, 100) <br>
+                print(random_number)</p>
+            <br>
+            <h2>Random Choice from List</h2>
+            <p>import random <br>
+                fruits = ["apple", "banana", "cherry"] <br>
+                random_fruit = random.choice(fruits) <br>
+                print(random_fruit)</p>
+            <br>
+            <h2>Shuffle a List</h2>
+            <p>import random <br>
+                numbers = [1, 2, 3, 4, 5] <br>
+                random.shuffle(numbers) <br>
+                print(numbers)</p>
+            <br>
+            <h2>Sort a List of Tuples by Second Element</h2>
+            <p>pairs = [(1, 3), (2, 2), (3, 1)] <br>
+                sorted_pairs = sorted(pairs, key=lambda x: x[1]) <br>
+                print(sorted_pairs)</p>
+            <br>
+            <h2>Check if List is Empty</h2>
+            <p>my_list = [] <br>
+                if not my_list: <br>
+                print("List is empty.") <br>
+                else: <br>
+                print("List is not empty.") </p>
+            <br>
+            <h2>Checking if String is Numeric</h2>
+            <p>string = "12345" <br>
+                if string.isdigit(): <br>
+                print("String is numeric.") <br>
+                else: <br>
+                print("String is not numeric.") </p>
+            <br>
+            <h2>Convert List of Strings to Integers</h2>
+            <p>string_numbers = ["1", "2", "3", "4"] <br>
+                int_numbers = list(map(int, string_numbers)) <br>
+                print(int_numbers)</p>
+            <br>
+            <h2>Nested List Comprehension</h2>
+            <p>matrix = [[1, 2, 3], [4, 5, 6]] <br>
+                flattened = [item for row in matrix for item in row] <br>
+                print(flattened)</p>
+            <br>
+            <h2>Check if File Exists</h2>
+            <p>import os <br>
+                if os.path.exists("file.txt"): <br>
+                print("File exists.") <br>
+                else: <br>
+                print("File does not exist.") </p>
+            <br>
+            <h2>Exit Program Early</h2>
+            <p>import sys <br>
+                sys.exit("Exiting program.") </p>
+            <br>
+            <h2>Read File Line by Line</h2>
+            <p>with open('file.txt', 'r') as file: <br>
+                for line in file: <br>
+                print(line.strip())</p>
+            <br>
+            <h2>Concatenate Lists</h2>
+            <p>list1 = [1, 2, 3] <br>
+                list2 = [4, 5, 6] <br>
+                combined = list1 + list2 <br>
+                print(combined)</p>
+            <br>
+            <h2>Working with a Stack</h2>
+            <p>stack = [] <br>
+                stack.append(1) <br>
+                stack.append(2) <br>
+                stack.pop() <br>
+                print(stack)</p>
+            <br>
+            <h2>Working with a Queue</h2>
+            <p>from collections import deque <br>
+                queue = deque() <br>
+                queue.append(1) <br>
+                queue.append(2) <br>
+                queue.popleft() <br>
+                print(queue)</p>
+            <br>
+            <h2>Recursive Function</h2>
+            <p>def factorial(n): <br>
+                if n == 1: <br>
+                return 1 <br>
+                return n * factorial(n - 1) <br><br>
+                print(factorial(5))</p>
+            <br>
+            <h2>Find Common Elements in Two Lists</h2>
+            <p>list1 = [1, 2, 3] <br>
+                list2 = [2, 3, 4] <br>
+                common_elements = list(set(list1) & set(list2)) <br>
+                print(common_elements)</p>
+            <br>
+            <h2>Check if List Contains Any Value</h2>
+            <p>numbers = [1, 2, 3, 4] <br>
+                if 3 in numbers: <br>
+                print("3 is in the list.") <br>
+                else: <br>
+                print("3 is not in the list.") </p>
+            <br>
+            <hr>
+            <footer><h2>created by shivansh sahu 6c | made with html only </h2></footer>
+</body>
+</html>

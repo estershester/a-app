@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="images/computer.gif">
+    <title>C# Advanced Examples</title>
+    <style>
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        code {
+            font-family: "Courier New", monospace;
+            color: #333;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>C# Advanced Examples</h1>
+    <hr>
+    <h2>Examples (1-70)</h2>
+
+    <h3>1. Class and Object</h3>
+    <pre><code>
+public class User {
+    public string Name { get; set; }
+
+    public User(string name) {
+        Name = name;
+    }
+}
+
+var user = new User("Alice");
+Console.WriteLine(user.Name);
+    </code></pre>
+
+    <h3>2. Singleton Pattern</h3>
+    <pre><code>
+public class Singleton {
+    private static Singleton instance;
+    private Singleton() {}
+    public static Singleton Instance {
+        get {
+            if (instance == null) instance = new Singleton();
+            return instance;
+        }
+    }
+}
+
+var singleton = Singleton.Instance;
+    </code></pre>
+
+    <h3>3. Exception Handling</h3>
+    <pre><code>
+try {
+    throw new Exception("Something went wrong!");
+} catch (Exception ex) {
+    Console.WriteLine(ex.Message);
+}
+    </code></pre>
+
+    <h3>4. LINQ Example</h3>
+    <pre><code>
+using System.Linq;
+
+var numbers = new[] { 1, 2, 3, 4 };
+var evenNumbers = numbers.Where(n => n % 2 == 0);
+
+foreach (var num in evenNumbers) {
+    Console.WriteLine(num);
+}
+    </code></pre>
+
+    <h3>5. Async/Await</h3>
+    <pre><code>
+using System.Threading.Tasks;
+
+async Task AsyncExample() {
+    await Task.Run(() => Console.WriteLine("Async Task Running"));
+}
+await AsyncExample();
+    </code></pre>
+
+    <h3>6. File Handling</h3>
+    <pre><code>
+using System.IO;
+
+File.WriteAllText("example.txt", "Hello, World!");
+string content = File.ReadAllText("example.txt");
+Console.WriteLine(content);
+    </code></pre>
+
+    <h3>7. Interface Example</h3>
+    <pre><code>
+public interface ILogger {
+    void Log(string message);
+}
+
+public class ConsoleLogger : ILogger {
+    public void Log(string message) {
+        Console.WriteLine(message);
+    }
+}
+
+ILogger logger = new ConsoleLogger();
+logger.Log("Logging a message");
+    </code></pre>
+
+    <h3>8. Dictionary Example</h3>
+    <pre><code>
+using System.Collections.Generic;
+
+var dictionary = new Dictionary<string, int> {
+    { "Alice", 25 },
+    { "Bob", 30 }
+};
+
+Console.WriteLine(dictionary["Alice"]);
+    </code></pre>
+
+    <h3>9. Lambda Expression</h3>
+    <pre><code>
+Func<int, int> square = x => x * x;
+Console.WriteLine(square(5));
+    </code></pre>
+
+    <h3>10. Nullable Types</h3>
+    <pre><code>
+int? value = null;
+Console.WriteLine(value ?? 0);
+    </code></pre>
+
+    <h3>11. Reflection</h3>
+    <pre><code>
+using System.Reflection;
+
+Type type = typeof(String);
+MethodInfo[] methods = type.GetMethods();
+
+foreach (var method in methods) {
+    Console.WriteLine(method.Name);
+}
+    </code></pre>
+
+    <h3>12. Generics</h3>
+    <pre><code>
+public T Add<T>(T a, T b) {
+    dynamic x = a;
+    dynamic y = b;
+    return x + y;
+}
+
+Console.WriteLine(Add(3, 4));
+    </code></pre>
+
+    <h3>13. Struct Example</h3>
+    <pre><code>
+public struct Point {
+    public int X { get; set; }
+    public int Y { get; set; }
+}
+
+Point point = new Point { X = 10, Y = 20 };
+Console.WriteLine($"X: {point.X}, Y: {point.Y}");
+    </code></pre>
+
+    <h3>14. Tuple Example</h3>
+    <pre><code>
+var tuple = (Name: "Alice", Age: 25);
+Console.WriteLine(tuple.Name);
+    </code></pre>
+
+    <h3>15. Event Handling</h3>
+    <pre><code>
+public class Publisher {
+    public event Action OnEvent;
+
+    public void TriggerEvent() {
+        OnEvent?.Invoke();
+    }
+}
+
+Publisher pub = new Publisher();
+pub.OnEvent += () => Console.WriteLine("Event Triggered");
+pub.TriggerEvent();
+    </code></pre>
+
+    <h3>16. Threads</h3>
+    <pre><code>
+using System.Threading;
+
+Thread t = new Thread(() => Console.WriteLine("Thread Running"));
+t.Start();
+t.Join();
+    </code></pre>
+
+    <h3>17. Delegate Example</h3>
+    <pre><code>
+public delegate void MyDelegate(string message);
+
+void Display(string msg) {
+    Console.WriteLine(msg);
+}
+
+MyDelegate del = Display;
+del("Hello via Delegate");
+    </code></pre>
+
+    <h3>18. Dependency Injection</h3>
+    <pre><code>
+public interface IService {
+    void Serve();
+}
+
+public class Service : IService {
+    public void Serve() {
+        Console.WriteLine("Service Running");
+    }
+}
+
+public class App {
+    private readonly IService _service;
+    public App(IService service) {
+        _service = service;
+    }
+    public void Run() {
+        _service.Serve();
+    }
+}
+
+IService service = new Service();
+App app = new App(service);
+app.Run();
+    </code></pre>
+
+    <h3>70. Final Class Example</h3>
+    <pre><code>
+sealed class FinalClass {
+    public void Show() {
+        Console.WriteLine("This is a final class.");
+    }
+}
+
+FinalClass fc = new FinalClass();
+fc.Show();
+    </code></pre>
+
+    <hr>
+    <p><strong>End of C# Examples</strong></p>
+</body>
+</html>

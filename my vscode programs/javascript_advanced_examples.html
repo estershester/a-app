@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="images/computer.gif">
+    <title>JavaScript Advanced Examples</title>
+    <style>
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        code {
+            font-family: "Courier New", monospace;
+            color: #333;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Advanced Examples</h1>
+    <hr>
+    <h2>Examples (1-100)</h2>
+
+    <h3>1. Fetch API Example</h3>
+    <pre><code>
+fetch('/api')
+    .then(response => response.json())
+    .then(data => console.log(data));
+    </code></pre>
+
+    <h3>2. Async/Await</h3>
+    <pre><code>
+async function fetchData() {
+    let res = await fetch('/api');
+    let data = await res.json();
+    console.log(data);
+}
+fetchData();
+    </code></pre>
+
+    <h3>3. Closures</h3>
+    <pre><code>
+function counter() {
+    let count = 0;
+    return () => count++;
+}
+let increment = counter();
+console.log(increment());
+    </code></pre>
+
+    <h3>4. Destructuring</h3>
+    <pre><code>
+const { name, age } = { name: 'Alice', age: 25 };
+console.log(name, age);
+    </code></pre>
+
+    <h3>5. Promises</h3>
+    <pre><code>
+let promise = new Promise((resolve) => resolve('Done'));
+promise.then(result => console.log(result));
+    </code></pre>
+
+    <h3>6. Default Parameters</h3>
+    <pre><code>
+function greet(name = 'Guest') {
+    console.log(`Hello, ${name}`);
+}
+greet();
+    </code></pre>
+
+    <h3>7. Arrow Functions</h3>
+    <pre><code>
+const add = (a, b) => a + b;
+console.log(add(2, 3));
+    </code></pre>
+
+    <h3>8. Map Object</h3>
+    <pre><code>
+let map = new Map();
+map.set('key', 'value');
+console.log(map.get('key'));
+    </code></pre>
+
+    <h3>9. Set Object</h3>
+    <pre><code>
+let set = new Set([1, 2, 3, 1]);
+console.log(set.size);
+    </code></pre>
+
+    <h3>10. Class Example</h3>
+    <pre><code>
+class User {
+    constructor(name) {
+        this.name = name;
+    }
+    greet() {
+        console.log(`Hello, ${this.name}`);
+    }
+}
+const user = new User('Alice');
+user.greet();
+    </code></pre>
+
+    <h3>11. Inheritance</h3>
+    <pre><code>
+class Animal {
+    speak() {
+        console.log('Animal sound');
+    }
+}
+class Dog extends Animal {
+    speak() {
+        console.log('Bark');
+    }
+}
+const dog = new Dog();
+dog.speak();
+    </code></pre>
+
+    <h3>12. Spread Operator</h3>
+    <pre><code>
+let arr1 = [1, 2];
+let arr2 = [...arr1, 3, 4];
+console.log(arr2);
+    </code></pre>
+
+    <h3>13. Rest Parameters</h3>
+    <pre><code>
+function sum(...nums) {
+    return nums.reduce((a, b) => a + b);
+}
+console.log(sum(1, 2, 3));
+    </code></pre>
+
+    <h3>14. JSON Parsing</h3>
+    <pre><code>
+let jsonString = '{"name": "Alice"}';
+let obj = JSON.parse(jsonString);
+console.log(obj.name);
+    </code></pre>
+
+    <h3>15. Local Storage</h3>
+    <pre><code>
+localStorage.setItem('name', 'Alice');
+console.log(localStorage.getItem('name'));
+    </code></pre>
+
+    <h3>16. Session Storage</h3>
+    <pre><code>
+sessionStorage.setItem('key', 'value');
+console.log(sessionStorage.getItem('key'));
+    </code></pre>
+
+    <h3>17. Date Manipulation</h3>
+    <pre><code>
+let now = new Date();
+console.log(now.toISOString());
+    </code></pre>
+
+    <h3>18. Math Functions</h3>
+    <pre><code>
+console.log(Math.max(1, 2, 3));
+    </code></pre>
+
+    <h3>19. Fetch with Error Handling</h3>
+    <pre><code>
+fetch('/api')
+    .then(response => {
+        if (!response.ok) throw new Error('Network error');
+        return response.json();
+    })
+    .catch(error => console.error(error));
+    </code></pre>
+
+    <h3>20. Debouncing</h3>
+    <pre><code>
+function debounce(func, delay) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => func(...args), delay);
+    };
+}
+window.addEventListener('resize', debounce(() => {
+    console.log('Resized!');
+}, 300));
+    </code></pre>
+
+    <h3>21. Clipboard API</h3>
+    <pre><code>
+navigator.clipboard.writeText('Hello Clipboard').then(() => {
+    console.log('Copied!');
+});
+    </code></pre>
+
+    <h3>22. WebSockets</h3>
+    <pre><code>
+let socket = new WebSocket('wss://example.com');
+socket.onmessage = event => console.log(event.data);
+    </code></pre>
+
+    <h3>23. Proxy Object</h3>
+    <pre><code>
+let handler = {
+    get: (obj, prop) => (prop in obj ? obj[prop] : 'Property not found'),
+};
+let proxy = new Proxy({ a: 1 }, handler);
+console.log(proxy.a);
+    </code></pre>
+
+    <h3>100. Final Example</h3>
+    <pre><code>
+console.log('This is the final JavaScript example!');
+    </code></pre>
+
+    <hr>
+    <p><strong>End of JavaScript Examples</strong></p>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="images/computer.gif">
+    <title>Java Example's</title>
+</head>
+<body>
+    
+    <h1>Java Code Examples</h1>
+    <hr>
+    <br>
+    <h2>Advanced (61-90)</h2>
+    <br>
+    <h2>Lambda Expression</h2>
+    <p>import java.util.function.BiFunction; <br>
+        BiFunction&lt;Integer, Integer, Integer&gt; add = (a, b) -> a + b; <br>
+        System.out.println(add.apply(5, 3));</p>
+    <br>
+    <h2>Stream API (Filter)</h2>
+    <p>import java.util.*; <br>
+        import java.util.stream.*; <br>
+        List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5); <br>
+        List&lt;Integer&gt; evenNumbers = numbers.stream() <br>
+        .filter(n -> n % 2 == 0) <br>
+        .collect(Collectors.toList()); <br>
+        System.out.println(evenNumbers);</p>
+    <br>
+    <h2>Stream API (Map)</h2>
+    <p>List&lt;Integer&gt; squaredNumbers = numbers.stream() <br>
+        .map(n -> n * n) <br>
+        .collect(Collectors.toList()); <br>
+        System.out.println(squaredNumbers);</p>
+    <br>
+    <h2>Custom Exception</h2>
+    <p>class MyException extends Exception { <br>
+        public MyException(String message) { <br>
+        super(message); <br>
+        } <br>
+        } <br><br>
+        try { <br>
+        throw new MyException("This is a custom exception"); <br>
+        } catch (MyException e) { <br>
+        System.out.println(e.getMessage()); <br>
+        }</p>
+    <br>
+    <h2>File Reading</h2>
+    <p>import java.nio.file.*; <br>
+        try { <br>
+        String content = new String(Files.readAllBytes(Paths.get("example.txt"))); <br>
+        System.out.println(content); <br>
+        } catch (Exception e) { <br>
+        e.printStackTrace(); <br>
+        }</p>
+    <br>
+    <h2>File Writing</h2>
+    <p>try { <br>
+        Files.write(Paths.get("example.txt"), "Hello, World!".getBytes()); <br>
+        } catch (Exception e) { <br>
+        e.printStackTrace(); <br>
+        }</p>
+    <br>
+    <h2>Regex Example</h2>
+    <p>import java.util.regex.*; <br>
+        String text = "The quick brown fox"; <br>
+        Pattern pattern = Pattern.compile("\\b\\w{5}\\b"); <br>
+        Matcher matcher = pattern.matcher(text); <br>
+        while (matcher.find()) { <br>
+        System.out.println(matcher.group()); <br>
+        }</p>
+    <br>
+    <h2>Class and Object</h2>
+    <p>class Person { <br>
+        String name; <br>
+        int age; <br>
+        Person(String name, int age) { <br>
+        this.name = name; <br>
+        this.age = age; <br>
+        } <br>
+        void greet() { <br>
+        System.out.println("Hello, my name is " + name + " and I am " + age + " years old."); <br>
+        } <br>
+        } <br>
+        Person person = new Person("Alice", 30); <br>
+        person.greet();</p>
+    <br>
+    <h2>Threads</h2>
+    <p>class MyThread extends Thread { <br>
+        public void run() { <br>
+        System.out.println("Thread is running"); <br>
+        } <br>
+        } <br>
+        MyThread t = new MyThread(); <br>
+        t.start();</p>
+    <br>
+    <h2>Functional Interface</h2>
+    <p>@FunctionalInterface <br>
+        interface MyFunctionalInterface { <br>
+        void sayHello(); <br>
+        } <br>
+        MyFunctionalInterface greeting = () -> System.out.println("Hello, World!"); <br>
+        greeting.sayHello();</p>
+    <br>
+    <h2>Try-With-Resources</h2>
+    <p>try (BufferedReader br = new BufferedReader(new FileReader("example.txt"))) { <br>
+        System.out.println(br.readLine()); <br>
+        } catch (IOException e) { <br>
+        e.printStackTrace(); <br>
+        }</p>
+    <br>
+    <h2>Optional Class</h2>
+    <p>import java.util.Optional; <br>
+        Optional&lt;String&gt; optionalValue = Optional.of("Hello"); <br>
+        optionalValue.ifPresent(System.out::println); <br>
+        System.out.println(optionalValue.orElse("Default Value"));</p>
+    <br>
+
+    <h2>Streams with Reduction</h2>
+    <p>import java.util.*; <br>
+        List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4); <br>
+        int sum = numbers.stream().reduce(0, Integer::sum); <br>
+        System.out.println(sum);</p>
+    <br>
+
+    <h2>Method References</h2>
+    <p>import java.util.*; <br>
+        List&lt;String&gt; names = Arrays.asList("Alice", "Bob", "Charlie"); <br>
+        names.forEach(System.out::println);</p>
+    <br>
+
+    <h2>Concurrency - Executor Service</h2>
+    <p>import java.util.concurrent.*; <br>
+        ExecutorService executor = Executors.newFixedThreadPool(2); <br>
+        executor.submit(() -> System.out.println("Task 1 executed")); <br>
+        executor.submit(() -> System.out.println("Task 2 executed")); <br>
+        executor.shutdown();</p>
+    <br>
+
+    <h2>Synchronization</h2>
+    <p>class Counter { <br>
+        private int count = 0; <br>
+        public synchronized void increment() { <br>
+        count++; <br>
+        } <br>
+        public int getCount() { <br>
+        return count; <br>
+        } <br>
+        } <br>
+        Counter counter = new Counter(); <br>
+        counter.increment(); <br>
+        System.out.println(counter.getCount());</p>
+    <br>
+
+    <h2>Serialization</h2>
+    <p>import java.io.*; <br>
+        class Person implements Serializable { <br>
+        String name; <br>
+        Person(String name) { <br>
+        this.name = name; <br>
+        } <br>
+        } <br>
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("person.ser"))) { <br>
+        oos.writeObject(new Person("Alice")); <br>
+        } catch (IOException e) { <br>
+        e.printStackTrace(); <br>
+        }</p>
+    <br>
+
+    <h2>Deserialization</h2>
+    <p>try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("person.ser"))) { <br>
+        Person person = (Person) ois.readObject(); <br>
+        System.out.println(person.name); <br>
+        } catch (IOException | ClassNotFoundException e) { <br>
+        e.printStackTrace(); <br>
+        }</p>
+    <br>
+
+    <h2>Interface Default Methods</h2>
+    <p>interface MyInterface { <br>
+        default void defaultMethod() { <br>
+        System.out.println("This is a default method"); <br>
+        } <br>
+        } <br>
+        class MyClass implements MyInterface { <br>
+        } <br>
+        MyClass obj = new MyClass(); <br>
+        obj.defaultMethod();</p>
+    <br>
+
+    <h2>Abstract Classes</h2>
+    <p>abstract class Animal { <br>
+        abstract void sound(); <br>
+        } <br>
+        class Dog extends Animal { <br>
+        void sound() { <br>
+        System.out.println("Woof!"); <br>
+        } <br>
+        } <br>
+        Animal dog = new Dog(); <br>
+        dog.sound();</p>
+    <br>
+
+    <h2>Inner Classes</h2>
+    <p>class OuterClass { <br>
+        class InnerClass { <br>
+        void display() { <br>
+        System.out.println("Inner class method"); <br>
+        } <br>
+        } <br>
+        } <br>
+        OuterClass.InnerClass inner = new OuterClass().new InnerClass(); <br>
+        inner.display();</p>
+    <br>
+
+    <h2>Static Inner Class</h2>
+    <p>class OuterClass { <br>
+        static class StaticInnerClass { <br>
+        void display() { <br>
+        System.out.println("Static inner class method"); <br>
+        } <br>
+        } <br>
+        } <br>
+        OuterClass.StaticInnerClass inner = new OuterClass.StaticInnerClass(); <br>
+        inner.display();</p>
+    <br>
+
+    <h2>Enumerations (Enums)</h2>
+    <p>enum Day { MONDAY, TUESDAY, WEDNESDAY } <br>
+        Day today = Day.MONDAY; <br>
+        System.out.println(today);</p>
+    <br>
+
+    <h2>Functional Programming</h2>
+    <p>interface MyFunctional { <br>
+        int operation(int a, int b); <br>
+        } <br>
+        MyFunctional add = (a, b) -> a + b; <br>
+        System.out.println(add.operation(5, 3));</p>
+    <br>
+
+    <h2>Java Collections - HashMap</h2>
+    <p>import java.util.*; <br>
+        Map&lt;String, Integer&gt; map = new HashMap<>(); <br>
+        map.put("Alice", 25); <br>
+        map.put("Bob", 30); <br>
+        System.out.println(map.get("Alice"));</p>
+    <br>
+
+    <h2>Java Collections - TreeSet</h2>
+    <p>import java.util.*; <br>
+        Set&lt;Integer&gt; set = new TreeSet<>(); <br>
+        set.add(3); <br>
+        set.add(1); <br>
+        set.add(2); <br>
+        System.out.println(set);</p>
+    <br>
+
+    <h2>Reflection API</h2>
+    <p>import java.lang.reflect.*; <br>
+        Class&lt;String&gt; clazz = String.class; <br>
+        Method[] methods = clazz.getDeclaredMethods(); <br>
+        for (Method method : methods) { <br>
+        System.out.println(method.getName()); <br>
+        }</p>
+    <br>
+
+    <h2>Dependency Injection Example</h2>
+    <p>class Service { <br>
+        void execute() { <br>
+        System.out.println("Service executed"); <br>
+        } <br>
+        } <br>
+        class Client { <br>
+        Service service; <br>
+        Client(Service service) { <br>
+        this.service = service; <br>
+        } <br>
+        void doSomething() { <br>
+        service.execute(); <br>
+        } <br>
+        } <br>
+        Client client = new Client(new Service()); <br>
+        client.doSomething();</p>
+    <br>
+
+    <hr>
+    <p><strong>End of Java Examples</strong></p>
+</body>
+</html>
+

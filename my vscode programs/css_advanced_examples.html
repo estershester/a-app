@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Advanced Examples</title>
+    <style>
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        code {
+            font-family: "Courier New", monospace;
+            color: #333;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Advanced Examples</h1>
+    <hr>
+    <h2>Examples (1-100)</h2>
+
+    <h3>1. Gradient Background</h3>
+    <pre><code>
+.gradient {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+    </code></pre>
+
+    <h3>2. Box Shadow</h3>
+    <pre><code>
+.box-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+    </code></pre>
+
+    <h3>3. Flexbox Layout</h3>
+    <pre><code>
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+    </code></pre>
+
+    <h3>4. Grid Layout</h3>
+    <pre><code>
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+    </code></pre>
+
+    <h3>5. CSS Animation</h3>
+    <pre><code>
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+    </code></pre>
+
+    <h3>6. Hover Effect</h3>
+    <pre><code>
+.hover-effect {
+    transition: transform 0.3s;
+}
+.hover-effect:hover {
+    transform: scale(1.1);
+}
+    </code></pre>
+
+    <h3>7. Sticky Header</h3>
+    <pre><code>
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background: #333;
+    color: #fff;
+}
+    </code></pre>
+
+    <h3>8. Responsive Design</h3>
+    <pre><code>
+@media (max-width: 600px) {
+    .responsive {
+        width: 100%;
+        background: lightblue;
+    }
+}
+    </code></pre>
+
+    <h3>9. Glassmorphism Effect</h3>
+    <pre><code>
+.glass {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+    </code></pre>
+
+    <h3>10. Tooltip</h3>
+    <pre><code>
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.tooltip::after {
+    content: 'Tooltip text';
+    position: absolute;
+    visibility: hidden;
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+.tooltip:hover::after {
+    visibility: visible;
+}
+    </code></pre>
+
+    <h3>11. CSS Variables</h3>
+    <pre><code>
+:root {
+    --main-color: #6c5ce7;
+}
+.variable {
+    color: var(--main-color);
+}
+    </code></pre>
+
+    <h3>12. Parallax Effect</h3>
+    <pre><code>
+.parallax {
+    background: url('image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 400px;
+}
+    </code></pre>
+
+    <h3>13. Scrollbar Styling</h3>
+    <pre><code>
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+    </code></pre>
+
+    <h3>14. CSS Counters</h3>
+    <pre><code>
+.counter {
+    counter-reset: section;
+}
+.counter p::before {
+    counter-increment: section;
+    content: "Section " counter(section) ": ";
+}
+    </code></pre>
+
+    <h3>15. Grid Auto-Fit</h3>
+    <pre><code>
+.auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+    </code></pre>
+
+    <h3>16. Text Shadow</h3>
+    <pre><code>
+.text-shadow {
+    text-shadow: 2px 2px 5px #000;
+}
+    </code></pre>
+
+    <h3>17. Pseudo-Elements</h3>
+    <pre><code>
+.pseudo::before {
+    content: "Before Text - ";
+}
+.pseudo::after {
+    content: " - After Text";
+}
+    </code></pre>
+
+    <h3>18. Clip Path</h3>
+    <pre><code>
+.clip-path {
+    clip-path: circle(50% at center);
+}
+    </code></pre>
+
+    <h3>19. CSS Masking</h3>
+    <pre><code>
+.mask {
+    mask-image: url('mask.png');
+}
+    </code></pre>
+
+    <h3>20. 3D Transform</h3>
+    <pre><code>
+.three-d {
+    transform: rotateY(45deg);
+}
+    </code></pre>
+
+    <h3>21. Fixed Footer</h3>
+    <pre><code>
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #222;
+}
+    </code></pre>
+
+    <h3>100. Animated Loader</h3>
+    <pre><code>
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+    </code></pre>
+
+    <hr>
+    <p><strong>End of CSS Examples</strong></p>
+</body>
+</html>

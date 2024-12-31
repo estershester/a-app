@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="images/computer.gif">
+    <title>C++ Advanced Examples</title>
+    <style>
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>C++ Advanced Examples</h1>
+    <hr>
+    <h2>Examples (1-70)</h2>
+
+    <h3>1. Class and Constructor</h3>
+    <pre><code>
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    class User {
+    public:
+        string name;
+        User(string name) : name(name) {}
+    };
+
+    int main() {
+        User user("Alice");
+        cout << user.name << endl;
+        return 0;
+    }
+    </code></pre>
+
+    <h3>2. Smart Pointer</h3>
+    <pre><code>
+    #include &lt;memory&gt;
+    #include &lt;iostream&gt;
+
+    using namespace std;
+
+    int main() {
+        unique_ptr<int> ptr = make_unique<int>(10);
+        cout << *ptr << endl;
+        return 0;
+    }
+    </code></pre>
+
+    <h3>3. Lambda Functions</h3>
+    <pre><code>
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    int main() {
+        auto square = [](int x) { return x * x; };
+        cout << square(5) << endl;
+        return 0;
+    }
+    </code></pre>
+
+    <h3>70. Final Class</h3>
+    <pre><code>
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    class FinalClass final {
+    public:
+        void display() { cout << "Final Class Example"; }
+    };
+
+    int main() {
+        FinalClass fc;
+        fc.display();
+        return 0;
+    }
+    </code></pre>
+
+    <hr>
+    <p><strong>End of C++ Examples</strong></p>
+</body>
+</html>
